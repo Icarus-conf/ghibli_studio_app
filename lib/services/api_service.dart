@@ -1,5 +1,3 @@
-// ignore_for_file: depend_on_referenced_packages
-
 import 'dart:convert';
 import 'package:ghibli_studio/model/post_model.dart';
 import 'package:http/http.dart' as http;
