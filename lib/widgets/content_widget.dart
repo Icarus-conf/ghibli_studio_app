@@ -1,4 +1,6 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:ghibli_studio/components/text_format.dart';
 
 class ContentWidget extends StatelessWidget {
@@ -38,9 +40,18 @@ class ContentWidget extends StatelessWidget {
                 topLeft: Radius.circular(12),
                 topRight: Radius.circular(12),
               ),
-              child: Image.network(
-                imagePath,
+              child: CachedNetworkImage(
+                imageUrl: imagePath,
                 width: 300,
+                placeholder: (context, url) => Container(
+                  alignment: Alignment.center,
+                  color: Colors.white,
+                  child: const SpinKitSquareCircle(
+                    color: Colors.blueGrey,
+                    size: 50.0,
+                  ),
+                ),
+                errorWidget: (context, url, error) => Icon(Icons.error),
               ),
             ),
             Container(

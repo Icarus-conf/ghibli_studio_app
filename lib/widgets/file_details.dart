@@ -1,4 +1,6 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:ghibli_studio/components/text_format.dart';
 import 'package:ghibli_studio/model/post_model.dart';
 
@@ -36,10 +38,18 @@ class FilmDetails extends StatelessWidget {
                       bottomLeft: Radius.circular(30),
                       bottomRight: Radius.circular(30),
                     ),
-                    child: Image.network(
-                      data.image,
-                      fit: BoxFit.cover,
+                    child: CachedNetworkImage(
+                      imageUrl: data.image,
                       height: 600,
+                      placeholder: (context, url) => Container(
+                        alignment: Alignment.center,
+                        color: Colors.white,
+                        child: const SpinKitSquareCircle(
+                          color: Colors.blueGrey,
+                          size: 50.0,
+                        ),
+                      ),
+                      errorWidget: (context, url, error) => Icon(Icons.error),
                     ),
                   ),
                 ),
