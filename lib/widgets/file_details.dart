@@ -74,7 +74,7 @@ class FilmDetails extends StatelessWidget {
                     fontS: 20,
                     fontWeight: FontWeight.w600,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   PoppinsText(

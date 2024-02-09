@@ -18,9 +18,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: WelcomePage.routeName,
       routes: {
-        HomePage.routeName: (context) => HomePage(),
-        WelcomePage.routeName: (context) => WelcomePage(),
-        FilmDetails.routeName: (context) => FilmDetails(),
+        HomePage.routeName: (context) => const HomePage(),
+        WelcomePage.routeName: (context) => const WelcomePage(),
+        FilmDetails.routeName: (context) => const FilmDetails(),
       },
     );
   }

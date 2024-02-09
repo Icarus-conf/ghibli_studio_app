@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:ghibli_studio/components/text_format.dart';
 import 'package:ghibli_studio/model/post_model.dart';
 import 'package:ghibli_studio/services/api_service.dart';
 import 'package:ghibli_studio/widgets/content_widget.dart';
@@ -26,6 +27,13 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const PoppinsText(
+          text: 'Ghibli Studio',
+          color: Colors.white,
+        ),
+        backgroundColor: const Color(0xFF124559),
+      ),
       body: FutureBuilder(
           future: futurePost,
           builder: (context, snapshot) {
