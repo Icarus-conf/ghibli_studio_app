@@ -43,6 +43,7 @@ class ContentWidget extends StatelessWidget {
               child: CachedNetworkImage(
                 imageUrl: imagePath,
                 width: 300,
+                fit: BoxFit.cover,
                 placeholder: (context, url) => Container(
                   alignment: Alignment.center,
                   color: Colors.white,

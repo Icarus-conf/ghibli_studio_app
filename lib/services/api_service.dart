@@ -5,7 +5,7 @@ import 'package:http/http.dart' as http;
 //Service
 Future<List<Post>> fetchPost() async {
   final response =
-      await http.get(Uri.parse('https://ghibliapi.vercel.app/films/'));
+      await http.get(Uri.parse('https://ghibliapi.vercel.app/films'));
 
   if (response.statusCode == 200) {
     final parsed = json.decode(response.body).cast<Map<String, dynamic>>();

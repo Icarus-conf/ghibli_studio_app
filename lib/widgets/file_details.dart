@@ -41,6 +41,7 @@ class FilmDetails extends StatelessWidget {
                     child: CachedNetworkImage(
                       imageUrl: data.image,
                       height: 600,
+                      fit: BoxFit.cover,
                       placeholder: (context, url) => Container(
                         alignment: Alignment.center,
                         color: Colors.white,
@@ -49,7 +50,8 @@ class FilmDetails extends StatelessWidget {
                           size: 50.0,
                         ),
                       ),
-                      errorWidget: (context, url, error) => const Icon(Icons.error),
+                      errorWidget: (context, url, error) =>
+                          const Icon(Icons.error),
                     ),
                   ),
                 ),
